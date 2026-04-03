@@ -35,7 +35,7 @@ export default function AdminDraws() {
     setSimulating(true);
     
     try {
-      const { data } = await api.post("/admin/draws/2026-03/simulate", {
+      const { data } = await api.post(`/admin/draws/${currentMonthKey}/simulate`, {
             logicType: "random"});
       setCurrentDraw(data);
       toast.success('Draw simulated successfully');
